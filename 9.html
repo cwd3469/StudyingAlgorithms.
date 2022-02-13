@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      const menu = [
+        "alex pizza pasta steak",
+        "bob noodle sandwich pasta",
+        "choi pizza sandwich pizza",
+        "alex pizza pasta steak",
+      ];
+
+      function solution(orders) {
+        const isorders = orders.map(x => x.split(" "));
+        const menus = {};
+        isorders.forEach(el => {
+          const onlymenu = el.filter((element, index) => index > 0);
+          const SetArr = new Set(onlymenu);
+          const arr = [...SetArr];
+          menus[el[0]] = [...arr].length;
+        });
+
+        const use = Object.values(menus);
+        const user = Object.keys(menus);
+        const max = Math.max(...use);
+
+        const res = [];
+        for (const [key, value] of Object.entries(menus)) {
+          if (value === max) {
+            res.push(key);
+          }
+        }
+        const collator = new Intl.Collator("en");
+        var a = [
+          { FirsName: "Ellie", LastName: "Williams" },
+          { FirstName: "Lara", LastName: "Croft" },
+        ];
+        function SortArray(x, y) {
+          return collator.compare(x.LastName, y.LastName);
+        }
+        return res.sort(SortArray);
+      }
+
+      console.log(solution(menu));
+    </script>
+  </body>
+</html>

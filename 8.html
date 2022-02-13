@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    2에서 3까지의 최소 비용을 구해라
+
+    <script>
+      const arr = [
+        [0, 0, 0, 0, 2, 0, 0, 0, 0, 0],
+        [0, 0, 1, 1, 1, 1, 1, 0, 0, 0],
+        [0, 0, 1, 1, 1, 1, 1, 1, 0, 0],
+        [0, 0, 1, 1, 1, 1, 1, 0, 1, 0],
+        [0, 0, 1, 1, 1, 1, 1, 0, 0, 0],
+        [0, 0, 0, 0, 3, 0, 0, 0, 1, 0],
+      ];
+
+      const pawer = 1;
+
+      function solution(board, c) {
+        const start = Location(board, 2);
+        const end = Location(board, 3);
+        const move = CountBlock(board, start, end);
+
+        var answer = move;
+
+        return answer;
+      }
+      function CountBlock(arr, start, end) {
+        let count = "";
+        const Xnum = Math.abs(start[0] - end[0]);
+        const Ynum = Math.abs(start[1] - end[1]);
+        count = Xnum + Ynum;
+        return count;
+      }
+
+      function Location(arr, s) {
+        for (let x = 0; x < arr.length; x++) {
+          const el = arr[x];
+          for (let y = 0; y < el.length; y++) {
+            const num = el[y];
+            if (num === s) {
+              return [x, y];
+            }
+          }
+        }
+      }
+
+      console.log(`답은 ${solution(arr, pawer)}`);
+    </script>
+  </body>
+</html>
