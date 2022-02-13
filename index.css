@@ -1,0 +1,37 @@
+.Catainer {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  padding: 10px;
+}
+.Box {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  background-color: #999;
+  border-radius: 20px;
+  padding: 20px;
+  color: #fff;
+}
+.Learned {
+  background-color: #eee;
+  border-radius: 20px;
+  padding: 20px;
+  color: #000;
+}
+
+.Title {
+  font-size: 30px;
+  font-weight: bold;
+  color: #000;
+}
+
+.SubTitle {
+  font-size: 15px;
+  color: #fff;
+}
+
+.LearnedTitle {
+  font-size: 20px;
+  color: #000;
+}
