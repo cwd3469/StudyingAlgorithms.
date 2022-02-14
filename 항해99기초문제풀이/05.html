@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="/reset.css" />
+    <link rel="stylesheet" href="/index.css" />
+  </head>
+  <body>
+    <div class="Catainer">
+      <div class="Box">
+        <h4 class="Title">가운데 글자 가져오기</h4>
+        <p class="SubTitle">
+          단어 s의 가운데 글자를 반환하는 함수, solution을 만들어 보세요. 단어의
+          길이가 짝수라면 가운데 두글자를 반환하면 됩니다.
+        </p>
+      </div>
+      <div class="Learned">
+        <div class="LearnedTitle">
+          반올림(round), 올림(ceil), 올림(Math.ceil())
+        </div>
+        <br />
+        Math.ceil() 함수 정수 올림 (음수 포함) 자릿수 지정 내림(Math.floor())
+        <br />
+        Math.floor() 함수 정수 내림 (음수 포함) 자릿수 지정 반올림(Math.round())
+        <br />
+        Math.round() 함수 정수 반올림 (음수 포함) 자릿수 지정 소수점 숫자 정밀도
+        <br />
+        문제 소수점 반올림 (toFixed(), toPrecision()) toFixed() 함수
+        toPrecision()
+      </div>
+
+      <div class="Learned">
+        <div class="LearnedTitle">
+          [JavaScript] 문자열 자르기 (substr, substring, slice)
+        </div>
+        <br />
+        str.substr(start[, length])
+        <br />
+        str.substring(indexStart[, indexEnd])
+        <br />
+        str.slice(beginIndex[, endIndex])
+      </div>
+    </div>
+
+    <script>
+      const txt = "abcde";
+      function solution(s) {
+        const half = s.length / 2 - 1;
+        const Even = s.split("")[Math.ceil(half)];
+        const Odd = s.substr(half, 2);
+        return s.length % 2 !== 0 ? Even : Odd;
+      }
+
+      console.log(solution(txt));
+    </script>
+  </body>
+</html>
